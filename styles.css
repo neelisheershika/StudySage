@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #4A90E2;
+}
+
+nav {
+    background-color: #4A90E2;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+🛠 Step 7: Ru

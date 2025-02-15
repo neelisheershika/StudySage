@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personal Info - StudySage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Enter Your Personal Details</h2>
+    <form method="post">
+        <input type="text" name="name" placeholder="Full Name" required><br>
+        <input type="date" name="dob" required><br>
+        <textarea name="hobbies" placeholder="Hobbies"></textarea><br>
+        <input type="text" name="exam_name" placeholder="Exam Name" required><br>
+        <input type="number" name="exam_duration" placeholder="Exam Duration (Months)" required><br>
+        <textarea name="description" placeholder="Study Preferences"></textarea><br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard - StudySage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('personal_info') }}">Personal Info</a>
+        <a href="{{ url_for('assessment') }}">Assessment</a>
+        <a href="{{ url_for('progress') }}">Progress</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+    <h2>Welcome to Your Study Dashboard 📖</h2>
+</body>
+</html>

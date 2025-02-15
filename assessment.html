@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment - StudySage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .streak-box {
+            background: #ffcc00;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">StudySage</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/personal_info">Personal Info</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/assessment">Assessment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/progress">Progress</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center mt-3">Assessment & Study Plan</h2>
+
+        <!-- Weekly Exam Section -->
+        <div class="card my-4">
+            <div class="card-header bg-success text-white">Weekly Exam</div>
+            <div class="card-body">
+                <p>Take your full-length exam for this week.</p>
+                <a href="#" class="btn btn-success">Start Weekly Exam</a>
+            </div>
+        </div>
+
+        <!-- Daily MCQ Exam Section -->
+        <div class="card my-4">
+            <div class="card-header bg-info text-white">Daily MCQ Test</div>
+            <div class="card-body">
+                <p>Complete your daily MCQ test to earn streaks.</p>
+                <a href="#" class="btn btn-info">Start MCQ Test</a>
+            </div>
+        </div>
+
+        <!-- Streak Section -->
+        <div class="text-center my-4">
+            <span class="streak-box">🔥 Streak: 5 Days</span>
+        </div>
+
+        <!-- Previous Exam Papers Section -->
+        <div class="card my-4">
+            <div class="card-header bg-warning text-dark">Previous Exam Papers</div>
+            <div class="card-body">
+                <p>Access past exam papers to practice.</p>
+                <a href="#" class="btn btn-warning">View Past Papers</a>
+            </div>
+        </div>
+
+        <!-- Reference Links Section -->
+        <div class="card my-4">
+            <div class="card-header bg-secondary text-white">Reference Materials</div>
+            <div class="card-body">
+                <p>Find useful reference links for your subjects.</p>
+                <a href="#" class="btn btn-secondary">View References</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ <h1>Study Plan for {{ exam_name }}</h1>
+    {% if study_plan %}
+        {% for day, subjects in study_plan.items() %}
+            <h2>{{ day }}</h2>
+            <ul>
+                {% for subject, topic in subjects.items() %}
+                    <li><strong>{{ subject }}:</strong> {{ topic }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>No study plan available. Please check your settings.</p>
+    {% endif %}
+</body>
+</html>
